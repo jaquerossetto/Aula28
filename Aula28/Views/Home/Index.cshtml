@@ -1,11 +1,13 @@
 ﻿<div class="container">
-    <h3> App Escola </h3>
+    <div class=" row mb-3">
+        <h3> App Escola </h3>
+    </div>
     <h4>#1 Turma </h4>
     <div class="row">
-        <div class="col">
+        <div class="col-11 mt-3">
             <input type="text" class="form-control" placeholder="Digite o nome do aluno" />
         </div>
-        <div class="col-auto">
+        <div class="col-auto mt-3">
             <button type="submit" class="btn btn-primary">🔍</button>
         </div>
     </div>
@@ -13,7 +15,7 @@
 
 
 <div class="container">
-    <ul class="list-group">
+    <ul class="list-group mt-5">
 
         @{
             var alunos = new List<AlunoModel>();
@@ -26,8 +28,8 @@
 
 
         <li class="list-group-item">
-            <div class="row">
-                <div class="col">
+            <div class="row fw-bold">
+                <div class="col-1">
                     #
                 </div>
                 <div class="col">
@@ -61,9 +63,9 @@
 
 
             <li class="list-group-item">
-                <div class="row @cor">
+                <div class="row @cor bg-opacity-25">
 
-                    <div class="col">
+                    <div class="col-1 fw-bold">
                         @Aluno.Id
                     </div>
 
