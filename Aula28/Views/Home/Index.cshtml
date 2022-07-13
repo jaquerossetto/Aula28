@@ -1,0 +1,83 @@
+﻿<div class="container">
+    <h3> App Escola </h3>
+    <h4>#1 Turma </h4>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Digite o nome do aluno" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">🔍</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <ul class="list-group">
+
+        @{
+            var alunos = new List<AlunoModel>();
+            alunos.Add(new AlunoModel(1, "Willian", "Sant Anna", "Reprovado"));
+            alunos.Add(new AlunoModel(2, "Thiago", "Machado", "Aprovado"));
+            alunos.Add(new AlunoModel(3, "Rodrigo", "Braga", "Aprovado"));
+            alunos.Add(new AlunoModel(4, "Caroline", "da Silva", "Recuperação"));
+
+        }
+
+
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col">
+                    #
+                </div>
+                <div class="col">
+                    Nome
+                </div>
+                <div class="col">
+                    Sobrenome
+                </div>
+                <div class="col">
+                    Status
+                </div>
+
+            </div>
+
+        </li>
+        @foreach (var Aluno in alunos)
+        {
+            string cor = "";
+            if (Aluno.Status == "Reprovado")
+            {
+                cor = "bg-danger";
+            }
+            else if (Aluno.Status == "Aprovado")
+            {
+                cor = "bg-light";
+            }
+            else
+            {
+                cor = "bg-warning";
+            }
+
+
+            <li class="list-group-item">
+                <div class="row @cor">
+
+                    <div class="col">
+                        @Aluno.Id
+                    </div>
+
+                    <div class="col">
+                        @Aluno.Nome
+                    </div>
+                    <div class="col">
+                        @Aluno.Sobrenome
+                    </div>
+                    <div class="col">
+                        @Aluno.Status
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
